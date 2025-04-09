@@ -119,68 +119,68 @@ const CoursePage: React.FC = () => {
             </div>
           </div>
 
-          <div className="p-8 grid md:grid-cols-3 gap-8">
+          <div className="p-4 sm:p-8 grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-8">
             {/* Course Details */}
-            <div className="md:col-span-2 space-y-6">
-              <div className="bg-white p-6 rounded-xl shadow-sm">
-                <div className="flex justify-between items-center mb-4">
-                  <h2 className="text-2xl font-golf-heading text-golf-green">Course Statistics</h2>
+            <div className="md:col-span-2 space-y-4 sm:space-y-6">
+              <div className="bg-white p-4 sm:p-6 rounded-xl shadow-sm">
+                <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-4 mb-4">
+                  <h2 className="text-xl sm:text-2xl font-golf-heading text-golf-green">Course Statistics</h2>
                   <div className="flex gap-2">
                     <button
-                      className={`px-3 py-1 rounded-lg ${selectedTees === "male" ? "bg-golf-green text-white" : "bg-gray-200"}`}
+                      className={`px-3 py-1 rounded-lg text-sm sm:text-base ${selectedTees === "male" ? "bg-golf-green text-white" : "bg-gray-200"}`}
                       onClick={() => setSelectedTees("male")}
                     >
                       Mens
                     </button>
                     <button
-                      className={`px-3 py-1 rounded-lg ${selectedTees === "female" ? "bg-golf-green text-white" : "bg-gray-200"}`}
+                      className={`px-3 py-1 rounded-lg text-sm sm:text-base ${selectedTees === "female" ? "bg-golf-green text-white" : "bg-gray-200"}`}
                       onClick={() => setSelectedTees("female")}
                     >
                       Womens
                     </button>
                   </div>
                 </div>
-                <div className="grid grid-cols-2 gap-6">
+                <div className="grid grid-cols-2 gap-4 sm:gap-6">
                   <div>
-                    <p className="text-clubhouse-gray">Total Distance</p>
-                    <p className="text-xl font-medium">
+                    <p className="text-sm sm:text-base text-clubhouse-gray">Total Distance</p>
+                    <p className="text-lg sm:text-xl font-medium">
                       {tees.total_yards} yds / {tees.total_meters} m
                     </p>
                   </div>
                   <div>
-                    <p className="text-clubhouse-gray">Par</p>
-                    <p className="text-xl font-medium">{tees.par_total}</p>
+                    <p className="text-sm sm:text-base text-clubhouse-gray">Par</p>
+                    <p className="text-lg sm:text-xl font-medium">{tees.par_total}</p>
                   </div>
                   <div>
-                    <p className="text-clubhouse-gray">Course Rating</p>
-                    <p className="text-xl font-medium">{tees.course_rating}</p>
+                    <p className="text-sm sm:text-base text-clubhouse-gray">Course Rating</p>
+                    <p className="text-lg sm:text-xl font-medium">{tees.course_rating}</p>
                   </div>
                   <div>
-                    <p className="text-clubhouse-gray">Slope Rating</p>
-                    <p className="text-xl font-medium">{tees.slope_rating}</p>
+                    <p className="text-sm sm:text-base text-clubhouse-gray">Slope Rating</p>
+                    <p className="text-lg sm:text-xl font-medium">{tees.slope_rating}</p>
                   </div>
                 </div>
               </div>
 
               {holes.length > 0 && (
-                <div className="bg-white p-6 rounded-xl shadow-sm">
-                  <h3 className="text-xl font-golf-heading text-golf-green mb-4">Scorecard</h3>
-                  <div className="scorecard">
-                    <div className="scorecard-header grid grid-cols-5 gap-4">
+                <div className="bg-white p-4 sm:p-6 rounded-xl shadow-sm">
+                  <h3 className="text-lg sm:text-xl font-golf-heading text-golf-green mb-4">Scorecard</h3>
+                  <div className="scorecard overflow-x-auto">
+                    <div className="scorecard-header grid grid-cols-5 gap-2 sm:gap-4 min-w-[500px]">
                       <div>Hole</div>
                       <div>Par</div>
                       <div>Yards</div>
                       <div>HCP</div>
                       <div></div>
                     </div>
-                    <div className="mt-2 space-y-1">
+                    <div className="mt-2 space-y-1 min-w-[500px]">
                       {(showAllHoles ? holes : holes.slice(0, 3)).map((hole: Hole, index: number) => (
-                        <div key={index} className="grid grid-cols-5 gap-4 p-2 hover:bg-gray-50 rounded items-center">
+                        <div key={index} className="grid grid-cols-5 gap-2 sm:gap-4 p-2 hover:bg-gray-50 rounded items-center">
                           <div>#{index + 1}</div>
                           <div>{hole.par}</div>
                           <div>{hole.yardage}</div>
                           <div>{hole.handicap}</div>
-                          <div className="text-sm text-golf-green">
+                          <div className="text-xs sm:text-sm text-golf-green">
                             {index === 8 && "Front 9"} {index === 17 && "Back 9"}
                           </div>
                         </div>
@@ -188,7 +188,7 @@ const CoursePage: React.FC = () => {
                     </div>
                     {holes.length > 3 && (
                       <button
-                        className="toggle-holes-btn w-full mt-4"
+                        className="toggle-holes-btn w-full mt-4 text-sm sm:text-base"
                         onClick={() => setShowAllHoles(!showAllHoles)}
                       >
                         {showAllHoles ? "Show Less" : `Show All ${holes.length} Holes`}
@@ -196,7 +196,7 @@ const CoursePage: React.FC = () => {
                     )}
                   </div>
                   {showAllHoles && (
-                    <div className="mt-4 grid grid-cols-2 gap-4 text-sm">
+                    <div className="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm">
                       <div>
                         <p>Front 9 Rating: {tees.front_course_rating}/{tees.front_slope_rating}</p>
                         <p>Back 9 Rating: {tees.back_course_rating}/{tees.back_slope_rating}</p>
@@ -212,38 +212,38 @@ const CoursePage: React.FC = () => {
             </div>
 
             {/* Weather and Location */}
-            <div className="space-y-6">
-              <div className="bg-water-texture p-6 rounded-xl">
-                <h2 className="text-xl font-golf-heading text-golf-green mb-4">Current Conditions</h2>
+            <div className="space-y-4 sm:space-y-6">
+              <div className="bg-water-texture p-4 sm:p-6 rounded-xl">
+                <h2 className="text-lg sm:text-xl font-golf-heading text-golf-green mb-4">Current Conditions</h2>
                 {weatherLoading && <div className="golf-spinner mx-auto"></div>}
                 {weather && (
                   <div className="space-y-4">
-                    <div className="bg-white bg-opacity-20 p-4 rounded-lg flex justify-between">
+                    <div className="bg-white bg-opacity-20 p-3 sm:p-4 rounded-lg flex justify-between">
                       <div>
-                        <p className="text-clubhouse-gray">Temperature</p>
-                        <p className="text-2xl font-medium">{weather.temp}°F</p>
+                        <p className="text-sm sm:text-base text-clubhouse-gray">Temperature</p>
+                        <p className="text-xl sm:text-2xl font-medium">{weather.temp}°F</p>
                       </div>
                       <div className="text-right">
-                        <p className="text-clubhouse-gray">Wind</p>
-                        <p className="text-2xl font-medium">{weather.windSpeed} mph</p>
+                        <p className="text-sm sm:text-base text-clubhouse-gray">Wind</p>
+                        <p className="text-xl sm:text-2xl font-medium">{weather.windSpeed} mph</p>
                       </div>
                     </div>
-                    <div className="bg-white bg-opacity-20 p-4 rounded-lg flex items-center">
-                      <span className="text-2xl mr-2">
+                    <div className="bg-white bg-opacity-20 p-3 sm:p-4 rounded-lg flex items-center">
+                      <span className="text-xl sm:text-2xl mr-2">
                         {weather.description.toLowerCase().includes("rain") ? "🌧️" : 
                          weather.description.toLowerCase().includes("cloud") ? "☁️" : "☀️"}
                       </span>
-                      <span>{weather.description}</span>
+                      <span className="text-sm sm:text-base">{weather.description}</span>
                     </div>
                   </div>
                 )}
               </div>
 
-              <div className="bg-white p-6 rounded-xl shadow-sm">
-                <h3 className="text-xl font-golf-heading text-golf-green mb-4">Location</h3>
-                <p className="text-clubhouse-gray mb-4">{course.location?.address}</p>
-                <div className="h-48 bg-gray-200 rounded-lg flex items-center justify-center">
-                  <p className="text-clubhouse-gray">
+              <div className="bg-white p-4 sm:p-6 rounded-xl shadow-sm">
+                <h3 className="text-lg sm:text-xl font-golf-heading text-golf-green mb-4">Location</h3>
+                <p className="text-sm sm:text-base text-clubhouse-gray mb-4">{course.location?.address}</p>
+                <div className="h-32 sm:h-48 bg-gray-200 rounded-lg flex items-center justify-center">
+                  <p className="text-sm sm:text-base text-clubhouse-gray">
                     {course.location?.latitude}, {course.location?.longitude}
                   </p>
                 </div>
