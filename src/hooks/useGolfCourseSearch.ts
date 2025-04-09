@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import { GolfCourse } from "../types/course";
 
-const API_KEY = "LLBJJSMSNP6LPU6GQ62LHZVURI";
+const API_KEY = process.env.REACT_APP_GOLF_API_KEY;
 const BASE_URL = "https://api.golfcourseapi.com/v1";
 
 export const useGolfCourseSearch = (query: string) => {

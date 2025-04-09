@@ -7,7 +7,7 @@ import { useWeather } from "../hooks/useWeather";
 import "../styles/CoursePage.css";
 import FavoriteButton from "../components/FavoriteButton";
 
-const API_KEY = "LLBJJSMSNP6LPU6GQ62LHZVURI";
+const API_KEY = process.env.REACT_APP_GOLF_API_KEY;
 const BASE_URL = "https://api.golfcourseapi.com/v1";
 
 interface Hole {

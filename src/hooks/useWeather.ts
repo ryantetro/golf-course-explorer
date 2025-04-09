@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import { Weather } from "../types/weather";
 
-const OPENWEATHER_KEY = "842475fe6ce55c38f37fce8d8348eeca"; // Replace with your key
+const OPENWEATHER_KEY = process.env.REACT_APP_OPENWEATHER_KEY;
 
 export const useWeather = (lat: number, lon: number) => {
   const [weather, setWeather] = useState<Weather | null>(null);
