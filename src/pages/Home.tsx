@@ -15,11 +15,11 @@ const Home: React.FC = () => {
         <div className="relative rounded-t-xl overflow-hidden mb-8 sm:mb-12">
           <div className="bg-fairway-green h-32 sm:h-40 w-full absolute top-0 left-0 opacity-90"></div>
           <div className="relative p-6 sm:p-8 text-white text-center">
-            <h1 className="text-3xl sm:text-4xl font-golf-heading flex items-center justify-center">
+            <h1 className="text-3xl sm:text-4xl font-golf-heading flex items-center justify-center break-words">
               <span className="mr-3">⛳</span>
               Golf Course Explorer
             </h1>
-            <p className="mt-2 opacity-90 text-sm sm:text-base">Find your perfect round</p>
+            <p className="mt-2 opacity-90 text-sm sm:text-base break-words">Find your perfect round</p>
           </div>
         </div>
 
@@ -36,22 +36,24 @@ const Home: React.FC = () => {
 
           {error && (
             <div className="text-center my-8 sm:my-12">
-              <p className="text-flagstick-red text-lg sm:text-xl mb-4">{error}</p>
+              <p className="text-flagstick-red text-lg sm:text-xl mb-4 break-words">{error}</p>
             </div>
           )}
 
           {courses.length === 0 && !loading && !error && (
             <div className="text-center my-8 sm:my-12">
               <div className="text-5xl sm:text-6xl text-golf-green mb-4 sm:mb-6">⛳</div>
-              <p className="text-clubhouse-gray text-lg sm:text-xl mb-4">No courses found</p>
-              <p className="text-clubhouse-gray text-sm sm:text-base">Try searching for a course above!</p>
+              <p className="text-clubhouse-gray text-lg sm:text-xl mb-4 break-words">No courses found</p>
+              <p className="text-clubhouse-gray text-sm sm:text-base break-words">Try searching for a course above!</p>
             </div>
           )}
 
           {courses.length > 0 && (
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
               {courses.map((course) => (
-                <CourseCard key={course.id} course={course} />
+                <div key={course.id} className="h-full">
+                  <CourseCard course={course} />
+                </div>
               ))}
             </div>
           )}

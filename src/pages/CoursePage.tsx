@@ -124,7 +124,7 @@ const CoursePage: React.FC = () => {
             <div className="md:col-span-2 space-y-4 sm:space-y-6">
               <div className="bg-white p-4 sm:p-6 rounded-xl shadow-sm">
                 <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-4 mb-4">
-                  <h2 className="text-xl sm:text-2xl font-golf-heading text-golf-green">Course Statistics</h2>
+                  <h2 className="text-xl sm:text-2xl font-golf-heading text-golf-green break-words">Course Statistics</h2>
                   <div className="flex gap-2">
                     <button
                       className={`px-3 py-1 rounded-lg text-sm sm:text-base ${selectedTees === "male" ? "bg-golf-green text-white" : "bg-gray-200"}`}
@@ -143,7 +143,7 @@ const CoursePage: React.FC = () => {
                 <div className="grid grid-cols-2 gap-4 sm:gap-6">
                   <div>
                     <p className="text-sm sm:text-base text-clubhouse-gray">Total Distance</p>
-                    <p className="text-lg sm:text-xl font-medium">
+                    <p className="text-lg sm:text-xl font-medium break-words">
                       {tees.total_yards} yds / {tees.total_meters} m
                     </p>
                   </div>
@@ -164,19 +164,19 @@ const CoursePage: React.FC = () => {
 
               {holes.length > 0 && (
                 <div className="bg-white p-4 sm:p-6 rounded-xl shadow-sm">
-                  <h3 className="text-lg sm:text-xl font-golf-heading text-golf-green mb-4">Scorecard</h3>
-                  <div className="scorecard overflow-x-auto">
-                    <div className="scorecard-header grid grid-cols-5 gap-2 sm:gap-4 min-w-[500px]">
-                      <div>Hole</div>
-                      <div>Par</div>
-                      <div>Yards</div>
-                      <div>HCP</div>
-                      <div></div>
+                  <h3 className="text-lg sm:text-xl font-golf-heading text-golf-green mb-4 break-words">Scorecard</h3>
+                  <div className="scorecard overflow-x-auto -mx-4 sm:-mx-6 px-4 sm:px-6">
+                    <div className="scorecard-header grid grid-cols-5 gap-2 sm:gap-4 min-w-[500px] text-sm sm:text-base">
+                      <div className="font-semibold">Hole</div>
+                      <div className="font-semibold">Par</div>
+                      <div className="font-semibold">Yards</div>
+                      <div className="font-semibold">HCP</div>
+                      <div className="font-semibold"></div>
                     </div>
                     <div className="mt-2 space-y-1 min-w-[500px]">
                       {(showAllHoles ? holes : holes.slice(0, 3)).map((hole: Hole, index: number) => (
-                        <div key={index} className="grid grid-cols-5 gap-2 sm:gap-4 p-2 hover:bg-gray-50 rounded items-center">
-                          <div>#{index + 1}</div>
+                        <div key={index} className="grid grid-cols-5 gap-2 sm:gap-4 p-2 hover:bg-gray-50 rounded items-center text-sm sm:text-base">
+                          <div className="font-medium">#{index + 1}</div>
                           <div>{hole.par}</div>
                           <div>{hole.yardage}</div>
                           <div>{hole.handicap}</div>
@@ -198,12 +198,12 @@ const CoursePage: React.FC = () => {
                   {showAllHoles && (
                     <div className="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm">
                       <div>
-                        <p>Front 9 Rating: {tees.front_course_rating}/{tees.front_slope_rating}</p>
-                        <p>Back 9 Rating: {tees.back_course_rating}/{tees.back_slope_rating}</p>
+                        <p className="break-words">Front 9 Rating: {tees.front_course_rating}/{tees.front_slope_rating}</p>
+                        <p className="break-words">Back 9 Rating: {tees.back_course_rating}/{tees.back_slope_rating}</p>
                       </div>
                       <div>
-                        <p>Total Par: {tees.par_total}</p>
-                        <p>Holes: {tees.number_of_holes}</p>
+                        <p className="break-words">Total Par: {tees.par_total}</p>
+                        <p className="break-words">Holes: {tees.number_of_holes}</p>
                       </div>
                     </div>
                   )}
@@ -214,7 +214,7 @@ const CoursePage: React.FC = () => {
             {/* Weather and Location */}
             <div className="space-y-4 sm:space-y-6">
               <div className="bg-water-texture p-4 sm:p-6 rounded-xl">
-                <h2 className="text-lg sm:text-xl font-golf-heading text-golf-green mb-4">Current Conditions</h2>
+                <h2 className="text-lg sm:text-xl font-golf-heading text-golf-green mb-4 break-words">Current Conditions</h2>
                 {weatherLoading && <div className="golf-spinner mx-auto"></div>}
                 {weather && (
                   <div className="space-y-4">
@@ -233,17 +233,17 @@ const CoursePage: React.FC = () => {
                         {weather.description.toLowerCase().includes("rain") ? "🌧️" : 
                          weather.description.toLowerCase().includes("cloud") ? "☁️" : "☀️"}
                       </span>
-                      <span className="text-sm sm:text-base">{weather.description}</span>
+                      <span className="text-sm sm:text-base break-words">{weather.description}</span>
                     </div>
                   </div>
                 )}
               </div>
 
               <div className="bg-white p-4 sm:p-6 rounded-xl shadow-sm">
-                <h3 className="text-lg sm:text-xl font-golf-heading text-golf-green mb-4">Location</h3>
-                <p className="text-sm sm:text-base text-clubhouse-gray mb-4">{course.location?.address}</p>
+                <h3 className="text-lg sm:text-xl font-golf-heading text-golf-green mb-4 break-words">Location</h3>
+                <p className="text-sm sm:text-base text-clubhouse-gray mb-4 break-words">{course.location?.address}</p>
                 <div className="h-32 sm:h-48 bg-gray-200 rounded-lg flex items-center justify-center">
-                  <p className="text-sm sm:text-base text-clubhouse-gray">
+                  <p className="text-sm sm:text-base text-clubhouse-gray break-words">
                     {course.location?.latitude}, {course.location?.longitude}
                   </p>
                 </div>
