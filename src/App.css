@@ -1,38 +1,50 @@
-.App {
-  text-align: center;
+/* App.css */
+
+/* Shared styles from other pages */
+.bg-fairway-green {
+  background: linear-gradient(135deg, #38a169, #2f855a);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.text-golf-green {
+  color: #2f855a;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.text-golf-gold {
+  color: #d69e2e;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.font-golf-heading {
+  font-family: 'Georgia', serif;
+  font-weight: 700;
+  letter-spacing: 0.5px;
 }
 
-.App-link {
-  color: #61dafb;
+/* Navigation specific styles */
+nav {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.nav-link {
+  position: relative;
+  padding-bottom: 4px;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #d69e2e;
+  transition: width 0.3s ease-in-out;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+/* Footer specific styles */
+footer {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
 }

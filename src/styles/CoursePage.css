@@ -1,0 +1,118 @@
+/* CoursePage.css */
+
+/* Enhanced Spinner */
+.golf-spinner {
+  border: 5px solid rgba(255, 255, 255, 0.2);
+  border-top: 5px solid #2f855a;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 0.8s ease-in-out infinite;
+  box-shadow: 0 0 10px rgba(47, 133, 90, 0.3);
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Enhanced Text Colors */
+.text-flagstick-red { color: #c53030; }
+.text-golf-green { color: #2f855a; }
+.text-clubhouse-gray { color: #4a5568; }
+.text-golf-gold { color: #d69e2e; }
+
+/* Enhanced Button Styles */
+.golf-btn {
+  background: linear-gradient(45deg, #2f855a, #38a169);
+  padding: 10px 24px;
+  border-radius: 6px;
+  color: white;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.golf-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Enhanced Card Styles */
+.golf-card {
+  background: linear-gradient(to bottom right, #ffffff, #f7fafc);
+  padding: 32px;
+  border-radius: 12px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(47, 133, 90, 0.1);
+}
+
+/* Enhanced Animation */
+.animate-fade-in {
+  animation: fadeIn 0.6s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Enhanced Typography */
+.font-golf-heading {
+  font-family: 'Georgia', serif;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+/* Enhanced Weather Section */
+.bg-fairway-green {
+  background: linear-gradient(135deg, #38a169, #2f855a);
+}
+
+.bg-water-texture {
+  background: linear-gradient(45deg, #ebf8ff, #bee3f8);
+  position: relative;
+  overflow: hidden;
+}
+
+/* .bg-water-texture::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('/path/to/water-texture.png') repeat;
+  opacity: 0.1;
+} */
+
+/* Scorecard Styles */
+.scorecard {
+  background: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+}
+
+.scorecard-header {
+  background: #2f855a;
+  color: white;
+  padding: 12px;
+  font-weight: 600;
+}
+
+/* New Toggle Button */
+.toggle-holes-btn {
+  background: #ffffff;
+  border: 2px solid #2f855a;
+  color: #2f855a;
+  padding: 8px 20px;
+  border-radius: 20px;
+  transition: all 0.3s ease;
+  margin-top: 15px;
+}
+
+.toggle-holes-btn:hover {
+  background: #2f855a;
+  color: white;
+}

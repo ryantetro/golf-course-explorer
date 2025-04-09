@@ -1,0 +1,50 @@
+/* FavoritesPage.css */
+
+/* Import CoursePage styles to maintain consistency */
+/* Note: In a real project, you might want to create a shared styles file */
+.golf-card {
+  background: linear-gradient(to bottom right, #ffffff, #f7fafc);
+  padding: 32px;
+  border-radius: 12px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(47, 133, 90, 0.1);
+}
+
+.bg-fairway-green {
+  background: linear-gradient(135deg, #38a169, #2f855a);
+}
+
+.text-golf-green {
+  color: #2f855a;
+}
+
+.text-clubhouse-gray {
+  color: #4a5568;
+}
+
+.font-golf-heading {
+  font-family: 'Georgia', serif;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.6s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Additional Favorites-specific styles */
+.favorites-header {
+  position: relative;
+  overflow: hidden;
+}
+
+.favorites-empty {
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.95), rgba(247, 250, 252, 0.95));
+  border-radius: 12px;
+  padding: 24px;
+}
