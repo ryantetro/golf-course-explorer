@@ -6,6 +6,7 @@ import { GolfCourse } from "../types/course";
 import { useWeather } from "../hooks/useWeather";
 import "../styles/CoursePage.css";
 import FavoriteButton from "../components/FavoriteButton";
+import GolfMap from '../components/GolfMap';
 
 const API_KEY = process.env.REACT_APP_GOLF_API_KEY;
 const BASE_URL = "https://api.golfcourseapi.com/v1";
@@ -240,13 +241,21 @@ const CoursePage: React.FC = () => {
               </div>
 
               <div className="bg-white p-4 sm:p-6 rounded-xl shadow-sm">
-                <h3 className="text-lg sm:text-xl font-golf-heading text-golf-green mb-4">Location</h3>
-                <p className="text-sm sm:text-base text-clubhouse-gray mb-4">{course.location?.address}</p>
-                <div className="h-32 sm:h-48 bg-gray-200 rounded-lg flex items-center justify-center">
-                  <p className="text-sm sm:text-base text-clubhouse-gray">
-                    {course.location?.latitude}, {course.location?.longitude}
-                  </p>
-                </div>
+                <h3 className="text-lg sm:text-xl font-golf-heading text-golf-green mb-4 break-words">Location</h3>
+                <p className="text-sm sm:text-base text-clubhouse-gray mb-4 break-words">{course.location?.address}</p>
+                {course.location?.latitude && course.location?.longitude ? (
+                  <GolfMap
+                    latitude={course.location.latitude}
+                    longitude={course.location.longitude}
+                    className="h-32 sm:h-48 w-full"
+                  />
+                ) : (
+                  <div className="h-32 sm:h-48 bg-gray-200 rounded-lg flex items-center justify-center">
+                    <p className="text-sm sm:text-base text-clubhouse-gray break-words">
+                      Location coordinates not available
+                    </p>
+                  </div>
+                )}
               </div>
             </div>
           </div>
