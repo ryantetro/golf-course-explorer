@@ -141,24 +141,28 @@ const CoursePage: React.FC = () => {
                     </button>
                   </div>
                 </div>
-                <div className="grid grid-cols-2 gap-4 sm:gap-6">
-                  <div>
-                    <p className="text-sm sm:text-base text-clubhouse-gray">Total Distance</p>
-                    <p className="text-lg sm:text-xl font-medium">
-                      {tees.total_yards} yds / {tees.total_meters} m
-                    </p>
-                  </div>
-                  <div>
-                    <p className="text-sm sm:text-base text-clubhouse-gray">Par</p>
-                    <p className="text-lg sm:text-xl font-medium">{tees.par_total}</p>
-                  </div>
-                  <div>
-                    <p className="text-sm sm:text-base text-clubhouse-gray">Course Rating</p>
-                    <p className="text-lg sm:text-xl font-medium">{tees.course_rating}</p>
-                  </div>
-                  <div>
-                    <p className="text-sm sm:text-base text-clubhouse-gray">Slope Rating</p>
-                    <p className="text-lg sm:text-xl font-medium">{tees.slope_rating}</p>
+                <div className="overflow-x-auto -mx-4 sm:mx-0">
+                  <div className="px-4 sm:px-0">
+                    <div className="grid grid-cols-2 gap-4 sm:gap-6 min-w-[500px]">
+                      <div>
+                        <p className="text-sm sm:text-base text-clubhouse-gray">Total Distance</p>
+                        <p className="text-lg sm:text-xl font-medium">
+                          {tees.total_yards} yds / {tees.total_meters} m
+                        </p>
+                      </div>
+                      <div>
+                        <p className="text-sm sm:text-base text-clubhouse-gray">Par</p>
+                        <p className="text-lg sm:text-xl font-medium">{tees.par_total}</p>
+                      </div>
+                      <div>
+                        <p className="text-sm sm:text-base text-clubhouse-gray">Course Rating</p>
+                        <p className="text-lg sm:text-xl font-medium">{tees.course_rating}</p>
+                      </div>
+                      <div>
+                        <p className="text-sm sm:text-base text-clubhouse-gray">Slope Rating</p>
+                        <p className="text-lg sm:text-xl font-medium">{tees.slope_rating}</p>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
