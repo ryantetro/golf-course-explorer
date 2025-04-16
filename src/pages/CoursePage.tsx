@@ -166,34 +166,38 @@ const CoursePage: React.FC = () => {
               {holes.length > 0 && (
                 <div className="bg-white p-4 sm:p-6 rounded-xl shadow-sm">
                   <h3 className="text-lg sm:text-xl font-golf-heading text-golf-green mb-4">Scorecard</h3>
-                  <div className="scorecard overflow-x-auto">
-                    <div className="scorecard-header grid grid-cols-5 gap-2 sm:gap-4 min-w-[500px]">
-                      <div>Hole</div>
-                      <div>Par</div>
-                      <div>Yards</div>
-                      <div>HCP</div>
-                      <div></div>
-                    </div>
-                    <div className="mt-2 space-y-1 min-w-[500px]">
-                      {(showAllHoles ? holes : holes.slice(0, 3)).map((hole: Hole, index: number) => (
-                        <div key={index} className="grid grid-cols-5 gap-2 sm:gap-4 p-2 hover:bg-gray-50 rounded items-center">
-                          <div>#{index + 1}</div>
-                          <div>{hole.par}</div>
-                          <div>{hole.yardage}</div>
-                          <div>{hole.handicap}</div>
-                          <div className="text-xs sm:text-sm text-golf-green">
-                            {index === 8 && "Front 9"} {index === 17 && "Back 9"}
+                  <div className="scorecard overflow-x-auto -mx-4 sm:mx-0">
+                    <div className="px-4 sm:px-0">
+                      <div className="scorecard-header grid grid-cols-5 gap-2 sm:gap-4 min-w-[600px]">
+                        <div className="font-medium">Hole</div>
+                        <div className="font-medium">Par</div>
+                        <div className="font-medium">Yards</div>
+                        <div className="font-medium">HCP</div>
+                        <div className="font-medium">Notes</div>
+                      </div>
+                      <div className="mt-2 space-y-1 min-w-[600px]">
+                        {(showAllHoles ? holes : holes.slice(0, 3)).map((hole: Hole, index: number) => (
+                          <div key={index} className="grid grid-cols-5 gap-2 sm:gap-4 p-2 hover:bg-gray-50 rounded items-center">
+                            <div className="font-medium">#{index + 1}</div>
+                            <div>{hole.par}</div>
+                            <div>{hole.yardage}</div>
+                            <div>{hole.handicap}</div>
+                            <div className="text-xs sm:text-sm text-golf-green">
+                              {index === 8 && "Front 9"} {index === 17 && "Back 9"}
+                            </div>
                           </div>
-                        </div>
-                      ))}
+                        ))}
+                      </div>
                     </div>
                     {holes.length > 3 && (
-                      <button
-                        className="toggle-holes-btn w-full mt-4 text-sm sm:text-base"
-                        onClick={() => setShowAllHoles(!showAllHoles)}
-                      >
-                        {showAllHoles ? "Show Less" : `Show All ${holes.length} Holes`}
-                      </button>
+                      <div className="px-4 sm:px-0">
+                        <button
+                          className="toggle-holes-btn w-full mt-4 text-sm sm:text-base"
+                          onClick={() => setShowAllHoles(!showAllHoles)}
+                        >
+                          {showAllHoles ? "Show Less" : `Show All ${holes.length} Holes`}
+                        </button>
+                      </div>
                     )}
                   </div>
                   {showAllHoles && (
