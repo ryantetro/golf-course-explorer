@@ -92,8 +92,7 @@ const App: React.FC = () => {
         <footer className="bg-fairway-green text-white">
           <div className="container mx-auto px-6 py-4 text-center">
             <p className="text-sm">
-              © {new Date().getFullYear()} Golf Course Explorer. All rights reserved. | 
-              Designed with <span className="text-golf-gold">🏌️‍♂️</span> by Ryan Tetro
+              <span className="text-golf-gold">🏌️‍♂️</span> by Ryan Tetro
             </p>
           </div>
         </footer>
