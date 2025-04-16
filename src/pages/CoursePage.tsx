@@ -109,7 +109,7 @@ const CoursePage: React.FC = () => {
         <div className="golf-card animate-fade-in">
           {/* Header */}
           <div className="relative rounded-t-xl overflow-hidden">
-            <div className="bg-fairway-green absolute top-0 left-0 w-full h-full opacity-90"></div>
+            <div className="bg-fairway-green absolute top-0 left-0 w-full h-full opacity-90 rounded-t-xl"></div>
             <div className="relative p-6 sm:p-8 text-white">
               <h1 className="text-2xl sm:text-4xl font-golf-heading flex items-start break-words">
                 <span className="mr-3 mt-1">⛳</span>
@@ -172,7 +172,7 @@ const CoursePage: React.FC = () => {
                   <h3 className="text-lg sm:text-xl font-golf-heading text-golf-green mb-4">Scorecard</h3>
                   <div className="overflow-x-auto -mx-4 sm:mx-0">
                     <div className="px-4 sm:px-0 min-w-[600px]">
-                      <div className="scorecard-header grid grid-cols-5 gap-2 sm:gap-4">
+                      <div className="scorecard-header grid grid-cols-5 gap-2 sm:gap-4 rounded-t-xl">
                         <div className="font-medium">Hole</div>
                         <div className="font-medium">Par</div>
                         <div className="font-medium">Yards</div>
