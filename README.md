@@ -1,46 +1,91 @@
-# Getting Started with Create React App
+# Golf Course Explorer
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A modern, responsive web application that helps golf enthusiasts discover and explore golf courses. Built with React, TypeScript, and Tailwind CSS, this app provides detailed course information, real-time weather updates, and interactive maps to enhance your golfing experience.
 
-## Available Scripts
+## Project Overview
 
-In the project directory, you can run:
+Golf Course Explorer lets you:
+- Search and browse through a comprehensive database of golf courses
+- View detailed course statistics, including yardage, par, and ratings
+- Check real-time weather conditions at each course
+- See course locations on an interactive map
+- Save your favorite courses for quick access
+- View detailed scorecards with hole-by-hole information
+- Toggle between men's and women's tee statistics
 
-### `npm start`
+## Getting Started
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### Prerequisites
+- npm or yarn
+- A modern web browser
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### Installation
 
-### `npm test`
+1. Install dependencies:
+```bash
+npm install
+# or
+yarn install
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+2. Create a `.env` file in the root directory and add your API keys:
+```
+REACT_APP_GOLF_API_KEY=your_golf_api_key
+REACT_APP_WEATHER_API_KEY=your_openweather_api_key
+REACT_APP_GOOGLE_MAPS_API_KEY=your_google_maps_api_key
+```
 
-### `npm run build`
+3. Start the development server:
+```bash
+npm start
+# or
+yarn start
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+The app will be available at `http://localhost:3000`
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## APIs Used
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Golf Course API
+- Used for fetching comprehensive golf course data
+- Provides course details, statistics, and scorecard information
+- Endpoints handle course search and individual course details
 
-### `npm run eject`
+### OpenWeather API
+- Delivers real-time weather data for each course location
+- Provides temperature, wind speed, and weather conditions
+- Updates automatically when viewing course details
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### Google Maps API
+- Displays interactive maps showing course locations
+- Uses custom styling for golf-themed map appearance
+- Implements custom markers for better visibility
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Features & Implementation
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+### Core Features
+- **TypeScript Integration**: Full type safety across the application
+- **Responsive Design**: Seamless experience on both desktop and mobile devices
+- **Real-time Data**: Live weather updates and course information
+- **Interactive Maps**: Visual location representation with custom styling
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+### Additional Features
+- **Custom Hooks**: 
+  - `useWeather`: Manages weather data fetching and state
+  - `useGoogleMaps`: Handles map initialization and interactions
+  
+- **State Management**: 
+  - Efficient React state handling
+  - Local storage for favorite courses
+  - Loading states for better UX
 
-## Learn More
+- **Error Handling**:
+  - Graceful fallbacks for API failures
+  - User-friendly error messages
+  - Loading indicators for async operations
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- **Mobile Optimization**:
+  - Touch-friendly interface
+  - Responsive grid layouts
+  - Optimized for various screen sizes
 
-To learn React, check out the [React documentation](https://reactjs.org/).
