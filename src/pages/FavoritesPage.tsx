@@ -16,13 +16,13 @@ const FavoritesPage: React.FC = () => {
     <div className="min-h-screen bg-gray-100">
       <div className="container mx-auto px-6 py-12">
         <div className="relative rounded-t-xl overflow-hidden mb-12">
-          <div className="bg-fairway-green h-40 w-full absolute top-0 left-0 opacity-90"></div>
-          <div className="relative p-8 text-white text-center">
-            <h1 className="text-4xl font-golf-heading flex items-center justify-center">
-              <span className="mr-3">⭐</span>
-              Favorite Golf Courses
+          <div className="bg-fairway-green absolute top-0 left-0 w-full h-full opacity-90"></div>
+          <div className="relative p-6 sm:p-8 text-white text-center">
+            <h1 className="text-2xl sm:text-4xl font-golf-heading flex items-start justify-center break-words">
+              <span className="mr-3 mt-1">⭐</span>
+              <span>Favorite Golf Courses</span>
             </h1>
-            <p className="mt-2 opacity-90">Your personal collection of top courses</p>
+            <p className="mt-2 opacity-90 break-words">Your personal collection of top courses</p>
           </div>
         </div>
 

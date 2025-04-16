@@ -170,16 +170,16 @@ const CoursePage: React.FC = () => {
               {holes.length > 0 && (
                 <div className="bg-white p-4 sm:p-6 rounded-xl shadow-sm">
                   <h3 className="text-lg sm:text-xl font-golf-heading text-golf-green mb-4">Scorecard</h3>
-                  <div className="scorecard overflow-x-auto -mx-4 sm:mx-0">
-                    <div className="px-4 sm:px-0">
-                      <div className="scorecard-header grid grid-cols-5 gap-2 sm:gap-4 min-w-[600px]">
+                  <div className="overflow-x-auto -mx-4 sm:mx-0">
+                    <div className="px-4 sm:px-0 min-w-[600px]">
+                      <div className="scorecard-header grid grid-cols-5 gap-2 sm:gap-4">
                         <div className="font-medium">Hole</div>
                         <div className="font-medium">Par</div>
                         <div className="font-medium">Yards</div>
                         <div className="font-medium">HCP</div>
                         <div className="font-medium">Notes</div>
                       </div>
-                      <div className="mt-2 space-y-1 min-w-[600px]">
+                      <div className="mt-2 space-y-1">
                         {(showAllHoles ? holes : holes.slice(0, 3)).map((hole: Hole, index: number) => (
                           <div key={index} className="grid grid-cols-5 gap-2 sm:gap-4 p-2 hover:bg-gray-50 rounded items-center">
                             <div className="font-medium">#{index + 1}</div>
@@ -192,17 +192,15 @@ const CoursePage: React.FC = () => {
                           </div>
                         ))}
                       </div>
-                    </div>
-                    {holes.length > 3 && (
-                      <div className="px-4 sm:px-0">
+                      {holes.length > 3 && (
                         <button
                           className="toggle-holes-btn w-full mt-4 text-sm sm:text-base"
                           onClick={() => setShowAllHoles(!showAllHoles)}
                         >
                           {showAllHoles ? "Show Less" : `Show All ${holes.length} Holes`}
                         </button>
-                      </div>
-                    )}
+                      )}
+                    </div>
                   </div>
                   {showAllHoles && (
                     <div className="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm">
