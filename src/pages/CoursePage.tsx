@@ -109,14 +109,14 @@ const CoursePage: React.FC = () => {
         <div className="golf-card animate-fade-in">
           {/* Header */}
           <div className="relative rounded-t-xl overflow-hidden">
-            <div className="bg-fairway-green h-40 w-full absolute top-0 left-0 opacity-90"></div>
-            <div className="relative p-8 text-white">
-              <h1 className="text-4xl font-golf-heading flex items-center">
-                <span className="mr-3">⛳</span>
-                {course.course_name}
+            <div className="bg-fairway-green absolute top-0 left-0 w-full h-full opacity-90"></div>
+            <div className="relative p-6 sm:p-8 text-white">
+              <h1 className="text-2xl sm:text-4xl font-golf-heading flex items-start break-words">
+                <span className="mr-3 mt-1">⛳</span>
+                <span className="flex-1">{course.course_name}</span>
               </h1>
-              <p className="mt-2 opacity-90">{course.club_name}</p>
-              <p className="mt-1 text-sm">{course.location?.address}</p>
+              <p className="mt-2 opacity-90 break-words">{course.club_name}</p>
+              <p className="mt-1 text-sm break-words">{course.location?.address}</p>
             </div>
           </div>
 
