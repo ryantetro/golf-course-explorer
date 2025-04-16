@@ -1,8 +1,10 @@
 import { useState, useEffect } from "react";
 
+// SearchBar component
 const SearchBar: React.FC<{ onSearch: (query: string) => void }> = ({ onSearch }) => {
   const [query, setQuery] = useState("");
 
+  // Effect to debounce search queries
   useEffect(() => {
     const timeout = setTimeout(() => {
       if (query.trim()) onSearch(query);
@@ -10,6 +12,7 @@ const SearchBar: React.FC<{ onSearch: (query: string) => void }> = ({ onSearch }
     return () => clearTimeout(timeout);
   }, [query, onSearch]);
 
+  // Return the SearchBar component
   return (
     <div className="flex flex-col sm:flex-row gap-3 p-6 bg-fairway-green bg-sand-texture rounded-golf shadow-lg">
       <input

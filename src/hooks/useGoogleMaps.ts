@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 
+// Declare the global window object
 declare global {
   interface Window {
     google: any;
@@ -7,10 +8,12 @@ declare global {
   }
 }
 
+// Custom hook for Google Maps
 export const useGoogleMaps = () => {
   const [isLoaded, setIsLoaded] = useState(false);
   const [loadError, setLoadError] = useState<Error | null>(null);
 
+  // Effect to load Google Maps
   useEffect(() => {
     if (!window.google) {
       const script = document.createElement('script');

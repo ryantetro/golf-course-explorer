@@ -4,14 +4,17 @@ import CourseCard from "../components/CourseCard";
 import { GolfCourse } from "../types/course";
 import "../styles/FavoritesPage.css";
 
+// FavoritesPage component
 const FavoritesPage: React.FC = () => {
   const [favorites, setFavorites] = useState<GolfCourse[]>([]);
 
+  // Effect to fetch favorites from local storage
   useEffect(() => {
     const storedFavorites = JSON.parse(localStorage.getItem("favorites") || "[]");
     setFavorites(storedFavorites);
   }, []);
 
+  // Render the FavoritesPage component
   return (
     <div className="min-h-screen bg-gray-100">
       <div className="container mx-auto px-6 py-12">
@@ -28,6 +31,7 @@ const FavoritesPage: React.FC = () => {
 
         <div className="golf-card animate-fade-in p-8">
           {favorites.length === 0 ? (
+            // Render a message if there are no favorites
             <div className="text-center py-12">
               <div className="text-6xl mb-6 text-golf-green">⛳</div>
               <p className="text-clubhouse-gray text-xl mb-4">
@@ -38,6 +42,7 @@ const FavoritesPage: React.FC = () => {
               </p>
             </div>
           ) : (
+            // Render the favorites
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {favorites.map((course) => (
                 <CourseCard key={course.id} course={course} />

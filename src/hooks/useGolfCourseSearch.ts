@@ -2,20 +2,24 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import { GolfCourse } from "../types/course";
 
+// API key and base URL
 const API_KEY = process.env.REACT_APP_GOLF_API_KEY;
 const BASE_URL = "https://api.golfcourseapi.com/v1";
 
+// Custom hook for golf course search
 export const useGolfCourseSearch = (query: string) => {
   const [courses, setCourses] = useState<GolfCourse[]>([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
+  // Effect to fetch courses when the query changes
   useEffect(() => {
     if (!query) {
       setCourses([]); // Clear courses when query is empty
       return;
     }
 
+    // Function to fetch courses
     const fetchCourses = async () => {
       setLoading(true);
       try {

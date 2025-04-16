@@ -8,15 +8,18 @@ import "../styles/CoursePage.css";
 import FavoriteButton from "../components/FavoriteButton";
 import GolfMap from '../components/GolfMap';
 
+// API key and base URL
 const API_KEY = process.env.REACT_APP_GOLF_API_KEY;
 const BASE_URL = "https://api.golfcourseapi.com/v1";
 
+// Hole interface
 interface Hole {
   par: number;
   yardage: number;
   handicap: number;
 }
 
+// Tee interface
 interface Tee {
   tee_name: string;
   course_rating?: number;
@@ -32,6 +35,7 @@ interface Tee {
   holes?: Hole[];
 }
 
+// CoursePage component
 const CoursePage: React.FC = () => {
   const { id } = useParams<{ id: string }>();
   const location = useLocation();
@@ -41,11 +45,13 @@ const CoursePage: React.FC = () => {
   const [showAllHoles, setShowAllHoles] = useState(false);
   const [selectedTees, setSelectedTees] = useState<"male" | "female">("male");
 
+  // Custom hook for weather data
   const { weather, loading: weatherLoading } = useWeather(
     course?.location?.latitude ?? 0,
     course?.location?.longitude ?? 0
   );
 
+  // Effect to fetch course details
   useEffect(() => {
     if (course) return;
 
@@ -68,12 +74,14 @@ const CoursePage: React.FC = () => {
     fetchCourse();
   }, [id, course]);
 
+  // Render a loading spinner if the course is still loading
   if (loading) return (
     <div className="flex justify-center items-center min-h-screen bg-gray-100">
       <div className="golf-spinner"></div>
     </div>
   );
 
+  // Render an error message if there's an error or the course is not found
   if (error || !course) return (
     <div className="container mx-auto p-6 text-center min-h-screen bg-gray-100">
       <div className="golf-card">
@@ -83,6 +91,7 @@ const CoursePage: React.FC = () => {
     </div>
   );
 
+  // Render the course details
   const tees: Tee = course.tees?.[selectedTees]?.[0] ?? {
     tee_name: "N/A",
     total_yards: 0,
@@ -99,6 +108,7 @@ const CoursePage: React.FC = () => {
   };
   const holes = tees.holes || [];
 
+    // Render the course details
   return (
     <div className="min-h-screen bg-gray-100">
       <div className="container mx-auto px-6 py-12">

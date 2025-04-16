@@ -4,8 +4,9 @@ import { useState } from "react";
 import Home from "./pages/Home";
 import CoursePage from "./pages/CoursePage";
 import FavoritesPage from "./pages/FavoritesPage";
-import "../src/App.css"; // Add this import for specific App styles
+import "../src/App.css";
 
+// App component
 const App: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
