@@ -1,7 +1,4 @@
 /* FavoritesPage.css */
-
-/* Import CoursePage styles to maintain consistency */
-/* Note: In a real project, you might want to create a shared styles file */
 .golf-card {
   background: linear-gradient(to bottom right, #ffffff, #f7fafc);
   padding: 32px;
@@ -37,7 +34,7 @@
   to { opacity: 1; transform: translateY(0); }
 }
 
-/* Additional Favorites-specific styles */
+/* Favorites-specific styles */
 .favorites-header {
   position: relative;
   overflow: hidden;

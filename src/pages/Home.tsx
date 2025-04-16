@@ -5,10 +5,12 @@ import CourseCard from "../components/CourseCard";
 import { useGolfCourseSearch } from "../hooks/useGolfCourseSearch";
 import "../styles/Home.css";
 
+// Home component
 const Home: React.FC = () => {
   const [searchQuery, setSearchQuery] = useState("");
   const { courses, loading, error } = useGolfCourseSearch(searchQuery);
 
+  // Render the Home component
   return (
     <div className="min-h-screen bg-gray-100">
       <div className="container mx-auto px-3 sm:px-6 py-6 sm:py-12">

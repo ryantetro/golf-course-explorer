@@ -1,6 +1,6 @@
 /* CoursePage.css */
 
-/* Enhanced Spinner */
+/* Spinner */
 .golf-spinner {
   border: 5px solid rgba(255, 255, 255, 0.2);
   border-top: 5px solid #2f855a;
@@ -16,13 +16,13 @@
   100% { transform: rotate(360deg); }
 }
 
-/* Enhanced Text Colors */
+/* Text Colors */
 .text-flagstick-red { color: #c53030; }
 .text-golf-green { color: #2f855a; }
 .text-clubhouse-gray { color: #4a5568; }
 .text-golf-gold { color: #d69e2e; }
 
-/* Enhanced Button Styles */
+/* Button Styles */
 .golf-btn {
   background: linear-gradient(45deg, #2f855a, #38a169);
   padding: 10px 24px;
@@ -38,7 +38,7 @@
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
 }
 
-/* Enhanced Card Styles */
+/* Card Styles */
 .golf-card {
   background: linear-gradient(to bottom right, #ffffff, #f7fafc);
   padding: 32px;
@@ -47,7 +47,7 @@
   border: 1px solid rgba(47, 133, 90, 0.1);
 }
 
-/* Enhanced Animation */
+/* Animation */
 .animate-fade-in {
   animation: fadeIn 0.6s ease-out;
 }
@@ -57,14 +57,14 @@
   to { opacity: 1; transform: translateY(0); }
 }
 
-/* Enhanced Typography */
+/* Typography */
 .font-golf-heading {
   font-family: 'Georgia', serif;
   font-weight: 700;
   letter-spacing: 0.5px;
 }
 
-/* Enhanced Weather Section */
+/* Weather Section */
 .bg-fairway-green {
   background: linear-gradient(135deg, #38a169, #2f855a);
 }
@@ -101,7 +101,7 @@
   font-weight: 600;
 }
 
-/* New Toggle Button */
+/* Toggle Button */
 .toggle-holes-btn {
   background: #ffffff;
   border: 2px solid #2f855a;

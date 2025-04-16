@@ -4,12 +4,14 @@ import { GolfCourse } from "../types/course";
 import FavoriteButton from "./FavoriteButton";
 import "../styles/CourseCard.css";
 
+// CourseCard component
 const CourseCard: React.FC<{ course: GolfCourse }> = ({ course }) => {
   const parTotal = course.tees?.male?.[0]?.par_total ?? "N/A";
   const locationString = course.location
     ? `${course.location.city ?? "Unknown"}, ${course.location.state ?? ""}, ${course.location.country ?? "Unknown"}`
     : "Location not available";
 
+  // Return the CourseCard component
   return (
     <div className="golf-card animate-fade-in hover:shadow-xl transition-all duration-300 h-full">
       <div className="relative h-full">

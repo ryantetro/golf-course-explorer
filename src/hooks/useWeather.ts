@@ -2,17 +2,21 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import { Weather } from "../types/weather";
 
+// API key and base URL
 const OPENWEATHER_KEY = process.env.REACT_APP_OPENWEATHER_KEY;
 
+// Custom hook for weather data
 export const useWeather = (lat: number, lon: number) => {
   const [weather, setWeather] = useState<Weather | null>(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
+  // Effect to fetch weather data
   useEffect(() => {
     // Skip fetch if coordinates are invalid (0, 0)
     if (lat === 0 || lon === 0) return;
 
+    // Function to fetch weather data
     const fetchWeather = async () => {
       setLoading(true);
       try {

@@ -1,6 +1,5 @@
 /* Home.css */
 
-/* Shared styles with CoursePage and FavoritesPage */
 .golf-card {
   background: linear-gradient(to bottom right, #ffffff, #f7fafc);
   padding: 32px;
@@ -40,7 +39,7 @@
   to { opacity: 1; transform: translateY(0); }
 }
 
-/* Enhanced Spinner */
+/* Spinner */
 .golf-spinner {
   border: 5px solid rgba(47, 133, 90, 0.2);
   border-top: 5px solid #2f855a;

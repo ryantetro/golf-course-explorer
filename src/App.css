@@ -1,6 +1,5 @@
 /* App.css */
 
-/* Shared styles from other pages */
 .bg-fairway-green {
   background: linear-gradient(135deg, #38a169, #2f855a);
 }
@@ -19,7 +18,7 @@
   letter-spacing: 0.5px;
 }
 
-/* Navigation specific styles */
+/* Navigation styles */
 nav {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
@@ -44,7 +43,7 @@ nav {
   width: 100%;
 }
 
-/* Footer specific styles */
+/* Footer styles */
 footer {
   border-top: 1px solid rgba(255, 255, 255, 0.1);
 }

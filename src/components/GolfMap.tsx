@@ -7,10 +7,12 @@ interface GolfMapProps {
   className?: string;
 }
 
+// GolfMap component
 const GolfMap: React.FC<GolfMapProps> = ({ latitude, longitude, className = '' }) => {
   const mapRef = useRef<HTMLDivElement>(null);
   const { isLoaded, loadError } = useGoogleMaps();
 
+  // Effect to create the map
   useEffect(() => {
     if (isLoaded && mapRef.current) {
       const map = new window.google.maps.Map(mapRef.current, {
@@ -36,12 +38,14 @@ const GolfMap: React.FC<GolfMapProps> = ({ latitude, longitude, className = '' }
         ]
       });
 
+      // Create a marker view
       const markerView = new window.google.maps.marker.AdvancedMarkerView({
         map,
         position: { lat: latitude, lng: longitude },
         title: 'Golf Course Location'
       });
 
+      // Add a click listener to the marker view
       markerView.addListener('click', () => {
         const infoWindow = new window.google.maps.InfoWindow({
           content: `
@@ -57,6 +61,7 @@ const GolfMap: React.FC<GolfMapProps> = ({ latitude, longitude, className = '' }
     }
   }, [isLoaded, latitude, longitude]);
 
+  // Render the map or an error message
   if (loadError) {
     return (
       <div className={`flex items-center justify-center bg-gray-100 rounded-lg ${className}`}>
